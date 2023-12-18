@@ -1,0 +1,26 @@
+
+
+<div>
+    <app-add-office-task (todoaddoffice)="addtodooffice($event)"></app-add-office-task>
+    <!-- routing path -->
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="this.todosoffice.length===0; else elseBlock">
+        <h1 class=" text-center ">
+            No office task yet.....
+        </h1></div>
+    <ng-template #elseBlock>
+        <!-- heading -->
+        <h1 class="container-fluid text-center mb-5">
+            Total Office task for you
+        </h1>
+        <!-- for showing table in task -->
+        <div>
+            <ul *ngFor="let todooffice of todosoffice">
+                <app-office-task [todooffice]="todooffice"
+                    (tododeleteoffice)="deleteTodo($event)"></app-office-task>
+            </ul>
+        </div>
+    </ng-template>
+</div>

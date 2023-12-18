@@ -1,0 +1,29 @@
+
+
+<div>
+    <app-addtask (todoadd)="addtodo($event)"></app-addtask>
+    <!-- routing path -->
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="this.todos.length===0; else elseBlock">
+        <h1 class=" text-center ">
+            No task yet.....
+        </h1></div>
+    <ng-template #elseBlock>
+        <!-- heading -->
+        <h1 class="container-fluid text-center mb-5">
+            Total Achivment task for you
+        </h1>
+        <!-- for showing table in task -->
+        <div>
+            <ul *ngFor="let todo of todos">
+                <app-task [todo]="todo"
+                    (tododelete)="deleteTodo($event)"  (todoedit)="edittodo($event)"  
+                    ></app-task>
+
+            </ul>
+        </div>
+        
+    </ng-template>
+</div>

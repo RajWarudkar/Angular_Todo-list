@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="first-page.component.css" type="text/css">
+  <title>Document</title>
+</head>
+<body>
+  
+  
+<div>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-8">
+    <div class="container-fluid">
+
+      <div class="box">
+        <button (click)="drawer.toggle()" mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+      <a class="navbar-brand ms-3" href="#">Todo - List</a>
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse"
+        id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <!-- Adding new task -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about-section">ABOUT</a>
+          </li>
+
+        </ul>
+        <div>
+          <div class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<mat-drawer-container style="height: 100%; background-color: rgba(122, 183, 241, 0.306);">
+  <mat-drawer #drawer opened="false" mode="side" position="start">
+    <mat-nav-list>
+      <mat-list-item>
+        <button routerLink="/office-todo-list" mat-button><mat-icon>dashboard</mat-icon>
+          Office work</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/personal-todo-list" mat-button><mat-icon>home</mat-icon>
+          Personal
+          task</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/todo-list" mat-button><mat-icon>explore</mat-icon>
+          Achivment task</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content >
+
+    <!-- routing path -->
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+    <!-- <div class="container justify-content-center">
+      <h1>Created by. Raj Warudkar </h1>
+    </div> -->
+    
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+</body>
+</html>
