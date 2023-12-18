@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container ">
+      <div class="mt-5" style="background-color: aquamarine;">
+        <table class="table ">
+          <thead>
+            <tr>
+              <th>Prority</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 10cap;">{{todooffice.srno1}}</td>
+              <td style="width: 10cap;">{{todooffice.name1}}</td>
+              <td style="width: 30cap; height: 10cap;">{{todooffice.desc1}}</td>
+              <td style="width: 10cap;"> <button type="button"
+                  class="btn btn-outline-success"
+                  (click)="openDialogWithoutRef1()">Edit</button></td>
+
+                  <ng-template #secondDialog1>
+                    <mat-dialog-content>
+                      <app-edit-office-task></app-edit-office-task>
+                    </mat-dialog-content>
+                  </ng-template>
+              <td style="width: 10cap;">
+                <button class="btn btn-outline-danger ms-2"
+                  (click)="openDialogWithoutRef()">Delete</button>
+
+                <ng-template #secondDialog>
+                  <mat-dialog-content>
+                    <h2 class="container-fluid"><strong>You really want to
+                        delete the created task?</strong></h2>
+                  </mat-dialog-content>
+                  <mat-dialog-actions align="end">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="text-center">
+                            <button matDialogClose type="button"
+                              class="w-25 p-2   me-2 btn btn-outline-danger"
+                              (click)="onClickDeleteoffice(todooffice)">Yes</button>
+                            <button matDialogClose color="primary"
+                              class="w-25 p-2  btn btn-outline-primary ">No</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-dialog-actions>
+                </ng-template>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>

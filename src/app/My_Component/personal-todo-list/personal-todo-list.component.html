@@ -1,0 +1,26 @@
+
+
+<div>
+    <app-add-personal-task (todoaddpersonal)="addtodoPersonal($event)"></app-add-personal-task>
+    <!-- routing path -->
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="this.todosPersonal.length===0; else elseBlock">
+        <h1 class=" text-center ">
+            No personal task yet.....
+        </h1></div>
+    <ng-template #elseBlock>
+        <!-- heading -->
+        <h1 class="container-fluid text-center mb-5">
+            Total Personal task for you
+        </h1>
+        <!-- for showing table in task -->
+        <div>
+            <ul *ngFor="let todopersonal of todosPersonal">
+                <app-personal-task [todoPersonal]="todopersonal"
+                    (tododeletepersonal)="deleteTodoPersonal($event)"></app-personal-task>
+            </ul>
+        </div>
+    </ng-template>
+</div>

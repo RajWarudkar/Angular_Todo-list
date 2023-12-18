@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task.component.css" type="text/css">
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- task.component.html -->
+
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Prority</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{todo.srno}}</td>
+              <td>{{todo.name}}</td>
+              <td>{{todo.desc}}</td>
+              <td> <button type="button"
+                  class="btn btn-outline-success" (click)="openDialogWithoutRef1()">Edit</button></td>
+                  <ng-template #secondDialog1>
+
+                    <mat-dialog-content>
+                      <app-edit-task></app-edit-task>
+                    </mat-dialog-content>
+
+                  </ng-template>
+          
+              <td>
+                <button class="btn btn-outline-danger ms-2"
+                  (click)="openDialogWithoutRef()">Delete</button>
+                <ng-template #secondDialog>
+
+                  <mat-dialog-content>
+                    <h2 class="container-fluid"><strong>You really want to
+                        delete the created task?</strong></h2>
+                  </mat-dialog-content>
+                  <mat-dialog-actions align="end">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="text-center">
+                            <button matDialogClose type="button"
+                              class="w-25 p-2   me-2 btn btn-outline-danger"
+                              (click)="onClickDeleteAchivment(todo)">Yes</button>
+                            <button matDialogClose color="primary"
+                              class="w-25 p-2  btn btn-outline-primary ">No</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-dialog-actions>
+                </ng-template>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>

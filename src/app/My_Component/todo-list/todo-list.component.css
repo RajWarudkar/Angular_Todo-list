@@ -1,0 +1,60 @@
+
+p {
+    font-size: 17px;
+    align-items: center;
+}
+.modal {
+    align-items: flex-start;
+    display: inline-block;  
+    justify-content: flex-start; 
+    position: absolute;
+
+    background: rgba(255, 255, 255, 0.475);
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+    border: solid 2px #000000;  
+   
+}
+.content {
+    position: absolute;
+    background: white;
+    width: 400px;
+    padding: 1em 2em;
+    border-radius: 4px;
+} 
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+/* Add this to your component's CSS file */
+.box-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+@media screen and (max-width: 300px) {
+    .modal {
+        align-items: end;
+        display: flex;
+        justify-content: flex-start; 
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.7);
+        transition: all 0.4s;
+        visibility: hidden;
+        opacity: 0;
+        
+        border: solid 2px;
+       
+        
+    }
+  } 

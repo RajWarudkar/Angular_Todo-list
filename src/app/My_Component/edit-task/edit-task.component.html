@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Edit your achivement task</h1>
+    <form action>
+        <div class="container">
+            <div class="mb-3 mt-3">
+                <label for="exampleFormControlInput1"
+                    class="form-label">Name:</label>
+                <input type="email" [(ngModel)]="name"
+                    class="form-control" name="name" id="name"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter name">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1"
+                    class="form-label">Description:</label>
+                <textarea style="width: 30cap;height: 20cap;"
+                    class="form-control"
+                    id="exampleFormControlTextarea1" id="desc"
+                    name="desc"
+                    rows="3" placeholder="Enter description"
+                    [(ngModel)]="desc"></textarea>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="exampleFormControlInput1"
+                    class="form-label">Prority:</label>
+                <input type="email" [(ngModel)]="srno"
+                    class="form-control" name="srno" id="srno"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter Prority">
+            </div>
+
+        </div>
+    </form>
+
+    <div class="text-center">
+        <button type="button"
+            class="btn btn-sm btn-primary"
+            (click)="onSubmit()">Confirm Edit</button>
+    </div>
+</div>
