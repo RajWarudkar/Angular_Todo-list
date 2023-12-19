@@ -3,8 +3,8 @@
 <div>
     <app-add-personal-task (todoaddpersonal)="addtodoPersonal($event)"></app-add-personal-task>
     <!-- routing path -->
-    <div>
-        <router-outlet></router-outlet>
+    <div class="container">
+        <a routerLink="/first-page" class="next round">&#8249;</a>
     </div>
     <div *ngIf="this.todosPersonal.length===0; else elseBlock">
         <h1 class=" text-center ">

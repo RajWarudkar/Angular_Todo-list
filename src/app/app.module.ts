@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AddtaskComponent } from './My_Component/addtask/addtask.component';
+
 import { TodoListComponent } from './My_Component/todo-list/todo-list.component';
 import { RouterModule } from '@angular/router';
 import { TaskComponent } from './My_Component/task/task.component';
@@ -9,7 +10,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LoginPageComponent } from './My_Component/login-page/login-page.component';
-import { CreateAccountComponent } from './My_Component/create-account/create-account.component';
 import { FirstPageComponent } from './My_Component/first-page/first-page.component';
 import { PersonalTaskComponent } from './My_Component/personal-task/personal-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,7 +45,6 @@ import { EditOfficeTaskComponent } from './My_Component/edit-office-task/edit-of
     AddtaskComponent,
     TaskComponent,
     LoginPageComponent,
-    CreateAccountComponent,
     FirstPageComponent,
     PersonalTaskComponent,
     OfficeTaskComponent,

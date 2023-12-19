@@ -3,15 +3,17 @@
 <div>
     <app-addtask (todoadd)="addtodo($event)"></app-addtask>
     <!-- routing path -->
-    <div>
-        <router-outlet></router-outlet>
+    <div class="container">
+        <a routerLink="/first-page" class="next round">&#8249;</a>
     </div>
     <div *ngIf="this.todos.length===0; else elseBlock">
+        <a href="#" class="previous round">&#8249;</a>
         <h1 class=" text-center ">
-            No task yet.....
+            No achievement task yet.....
         </h1></div>
     <ng-template #elseBlock>
         <!-- heading -->
+         
         <h1 class="container-fluid text-center mb-5">
             Total Achivment task for you
         </h1>
