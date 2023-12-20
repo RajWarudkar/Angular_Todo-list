@@ -1,26 +1,112 @@
 
-
 <div>
-    <app-add-office-task (todoaddoffice)="addtodooffice($event)"></app-add-office-task>
-    <!-- routing path -->
-    <div class="container">
-        <a routerLink="/first-page" class="next round">&#8249;</a>
-    </div>
-    <div *ngIf="this.todosoffice.length===0; else elseBlock">
-        <h1 class=" text-center ">
-            No office task yet.....
-        </h1></div>
-    <ng-template #elseBlock>
-        <!-- heading -->
-        <h1 class="container-fluid text-center mb-5">
-            Total Office task for you
-        </h1>
-        <!-- for showing table in task -->
-        <div>
-            <ul *ngFor="let todooffice of todosoffice">
-                <app-office-task [todooffice]="todooffice"
-                    (tododeleteoffice)="deleteTodo($event)"></app-office-task>
-            </ul>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-8">
+        <div class="container-fluid">
+
+            <div class="box">
+                <button (click)="drawer.toggle()" mat-icon-button>
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <a class="navbar-brand ms-3" routerLink="/first-page">Todo - List</a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse"
+                id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Adding new task -->
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/about-section">ABOUT</a>
+                    </li>
+
+                </ul>
+                <div>
+                    <div class="spinner-grow text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-secondary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-success" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-danger" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-warning" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-info" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-light" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow text-dark" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </ng-template>
+    </nav>
+</div>
+
+<mat-drawer-container style="height: 100%;">
+    <mat-drawer #drawer opened="false" mode="side" position="start">
+        <mat-nav-list>
+
+            <mat-list-item>
+                <button routerLink="/office-todo-list" mat-button><mat-icon>dashboard</mat-icon>
+                    Office work</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="/personal-todo-list" mat-button><mat-icon>home</mat-icon>
+                    Personal
+                    task</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="/todo-list" mat-button><mat-icon>explore</mat-icon>
+                    Achivment task</button>
+            </mat-list-item>
+        </mat-nav-list>
+
+    </mat-drawer>
+
+    <mat-drawer-content>
+
+        <div>
+            <app-add-office-task (todoaddoffice)="addtodooffice($event)"></app-add-office-task>
+            <!-- routing path -->
+            
+            <div *ngIf="this.todosoffice.length===0; else elseBlock">
+                <h1 class=" text-center ">
+                    No office task yet.....
+                </h1></div>
+            <ng-template #elseBlock>
+                <!-- heading -->
+                <h1 class="container-fluid text-center mb-5">
+                    Total Office task for you
+                </h1>
+                <!-- for showing table in task -->
+                <div>
+                    <ul *ngFor="let todooffice of todosoffice">
+                        <app-office-task [todooffice]="todooffice"
+                            (tododeleteoffice)="deleteTodo($event)"></app-office-task>
+                    </ul>
+                </div>
+            </ng-template>
+        </div>
+    </mat-drawer-content>
+
+</mat-drawer-container>
+<div>
+
 </div>

@@ -12,6 +12,7 @@ export class TodoListComponent implements OnInit {
   localItem: string | null;
   todos!: Todo[];
   editingTodo: Todo | null = null;
+drawer: any;
  
 
   
@@ -51,7 +52,7 @@ export class TodoListComponent implements OnInit {
     }
   }
 
-
+  
 
 
 

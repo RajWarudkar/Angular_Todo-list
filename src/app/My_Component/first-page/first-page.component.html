@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="first-page.component.css" type="text/css">
-  <title>Document</title>
-</head>
-<body>
-  
-  
+
 <div>
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-8">
@@ -19,7 +9,7 @@
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      <a class="navbar-brand ms-3" >Todo - List</a>
+      <a class="navbar-brand ms-3">Todo - List</a>
       <button class="navbar-toggler" type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent"
@@ -68,39 +58,107 @@
     </div>
   </nav>
 </div>
-<mat-drawer-container style="height: 100%; background-image: url('/assets/image/compute-ea4c57a4.png');">
-  <mat-drawer #drawer opened="false" mode="side" position="start">
-    <mat-nav-list>
-      <mat-list-item>
-        <button routerLink="/office-todo-list" mat-button><mat-icon>dashboard</mat-icon>
-          Office work</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button routerLink="/personal-todo-list" mat-button><mat-icon>home</mat-icon>
-          Personal
-          task</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button routerLink="/todo-list" mat-button><mat-icon>explore</mat-icon>
-          Achivment task</button>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-drawer>
-  <mat-drawer-content >
+<div class="video-container">
 
-    <!-- routing path -->
-    <!-- <div>
-      
-    </div> -->
-    <!-- <div class="container justify-content-center">
-      <h1>Created by. Raj Warudkar </h1>
-    </div> -->
-    
+  <mat-drawer-container style="height: 100%;">
+    <mat-drawer #drawer opened="false" mode="side" position="start">
+      <mat-nav-list>
 
-  </mat-drawer-content>
-</mat-drawer-container>
+        <mat-list-item>
+          <button routerLink="/office-todo-list" mat-button><mat-icon>dashboard</mat-icon>
+            Office work</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button routerLink="/personal-todo-list" mat-button><mat-icon>home</mat-icon>
+            Personal
+            task</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button routerLink="/todo-list" mat-button><mat-icon>explore</mat-icon>
+            Achivment task</button>
+        </mat-list-item>
+      </mat-nav-list>
 
+    </mat-drawer>
 
+    <mat-drawer-content>
 
-</body>
-</html>
+      <div class="container1">
+        <video #videoPlayer autoplay muted loop playsinline id="myVideo"
+          preload="metadata" width="1920px"
+          class="backvideo">
+          <source src="/assets/image/backgroundvid.mp4" type="video/mp4">
+        </video>
+        <div class="content mt-5">
+          <h1>Hello </h1>
+          <h2 class="receivedMessage">{{ receivedMessage }}</h2>
+          <p class="mt-5">Start your todo list</p>
+          <div class="row position-relative">
+            <div class="col-sm-4 position-absolute top-50 start-50 ">
+              <div class="card" style="width: 30rem;">
+                <div class="card-body">
+                  <h3 style="font-size: 30px;" class="card-title">Your Office Task<div class="toast-container position-static">
+                    <div class="toast mt-2" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="toast-header">
+                        <img src="source" class="rounded me-2" alt="Bootstrap" />
+                        <strong class="me-auto">Bootstrap</strong>
+                        <small class="text-muted">just now</small>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="toast"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="toast-body">See? Just like this.</div>
+                    </div>
+                  
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="toast-header">
+                        <img
+                          src="source"
+                          class="rounded me-2"
+                          alt="Bootstrap 2"
+                        />
+                        <strong class="me-auto">Bootstrap 2</strong>
+                        <small class="text-muted">just now</small>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="toast"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="toast-body">
+                        Heads up, toasts will stack automatically
+                      </div>
+                    </div>
+                  </div>
+                  </h3>
+                  <p class="card-text">Some quick example text to build on the
+                    card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 position-absolute bottom-50 end-50">
+              <div class="card " style="width: 30rem;">
+                <div class="card-body">
+                  <h3 style="font-size: 30px;" class="card-title">Your Personal Task</h3>
+                  <p class="card-text">Some quick example text to build on the
+                    card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="secondcard">
+            
+          </div>
+        </div>
+      </div>
+
+    </mat-drawer-content>
+
+  </mat-drawer-container>
+</div>

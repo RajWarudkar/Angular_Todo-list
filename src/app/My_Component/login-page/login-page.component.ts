@@ -1,11 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
+import { DataService } from 'src/app/data.service.spec';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  
+  message: string = '';
+
+
+  sendMessage() {
+    this.dataService.sendData(this.loginObj.useremail);
+  }
+
+
+  public display_username : string |undefined
 
   isLoggedIn: boolean = false;
 
@@ -21,9 +33,7 @@ export class LoginPageComponent implements OnInit {
     userpass: "",
   }
 
-  constructor(private router: Router) { }
-
-
+  constructor(private router: Router,private dialog: MatDialog,private dataService: DataService) { }
 
   ngOnInit(): void {
     const localdata = localStorage.getItem('signupUser');
@@ -52,7 +62,20 @@ export class LoginPageComponent implements OnInit {
     } else {
       alert("Wrong ID or Pssword")
     }
+    this.display_username=this.loginObj.username
   }
+
+  @ViewChild('secondDialog', { static: true })
+  secondDialog!: TemplateRef<any>;
+  openDialogWithTemplateRef(templateRef: TemplateRef<any>) {
+    this.dialog.open(templateRef);
+  }
+  openDialogWithoutRef() {
+    this.dialog.open(this.secondDialog);
+  }
+
+
+  
 
 
 }

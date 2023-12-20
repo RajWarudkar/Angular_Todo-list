@@ -1,28 +1,44 @@
 
 
-<body>
-    
-	<div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
-
-			<div class="signup">
-				<form>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" required="" [(ngModel)]="signUpObj.userName">
-					<input type="email" name="email" placeholder="Email" required="" [(ngModel)]="signUpObj.userEmail">
-					<input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="signUpObj.userPass">
-					<button (click)="onSignUp()">Sign up</button>
-				</form>
+<div class="container ">
+	<div class="card main">
+		<div class="card-header">
+			<h1>Login</h1>
+		</div>
+		<div class="card-body">
+			<form action="/submit">
+				<label for="chk" aria-hidden="true" class="fields ">User Email :-</label>
+				<input type="email" name="email" placeholder="Email" required
+					[(ngModel)]="loginObj.useremail" class="form-control mt-2 mb-3">
+				<label for="chk" aria-hidden="true" class="fields ">User Pass :-</label>
+				<input type="password" name="pswd" placeholder="Password" required
+					[(ngModel)]="loginObj.userpass" class="form-control mb-4">
+				<button type="submit" class="btn btn-primary btn-block login" (click)="onLogin(); sendMessage()" >Login</button>
+			</form>
+			<div class="justify-content-start position-relative ">
+				<label for class="mt-4"><h2>New User?</h2></label><br>
+				<button type="submit"
+					class="btn btn-success btn-block"
+					(click)="openDialogWithoutRef()">Sign Up</button>
 			</div>
+			<ng-template #secondDialog>
+				<mat-dialog-content>
+					<!-- Signup Modal -->
+					<div class="container-fluid signupbox">
+						<label for="chk" aria-hidden="true" class="fields mb-2"><h1>Sign up</h1></label>
+						<input type="text" name="txt" placeholder="User name" class="fields1"
+							required
+							[(ngModel)]="signUpObj.userName" class="form-control">
+						<input type="email" name="email" placeholder="Email" class="fields2"
+							required
+							[(ngModel)]="signUpObj.userEmail" class="form-control">
+						<input type="password" name="pswd" placeholder="Password" class="fields3"
+							required
+							[(ngModel)]="signUpObj.userPass" class="form-control">
+						<button (click)="onSignUp()" class="btn btn-outline-success">Sign up</button>
+					</div>
+				</mat-dialog-content>
+			</ng-template>
 
-			<div class="login">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required="" [(ngModel)]="loginObj.useremail">
-					<input type="password" name="pswd" placeholder="Password" required="" [(ngModel)]="loginObj.userpass">
-					<button (click)="onLogin()">Login</button>
-				</form>
-			</div>
+		</div>
 	</div>
-
-</body>
