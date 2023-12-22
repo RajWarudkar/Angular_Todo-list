@@ -17,12 +17,17 @@ export class EditOfficeTaskComponent implements OnInit {
   name: string = '';
   desc: string = '';
   srno: number = 0;
-
+  starttime: number =0;
+  endtime :number =0;
+  active :boolean =false
   onSubmit() {
     const todo: Todo = {
       srno: this.srno,
       name: this.name,
-      desc: this.desc
+      desc: this.desc,
+      starttime :this.starttime,
+      endtime :this.endtime,
+      active :this.active
     };
     this.todoedit.emit(todo);
   }

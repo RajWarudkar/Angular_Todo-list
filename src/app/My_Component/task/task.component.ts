@@ -21,6 +21,7 @@ export class TaskComponent implements OnInit {
   todo = new Todo();
   @Output() tododelete: EventEmitter<Todo> = new EventEmitter;
   @Output() todoedit: EventEmitter<Todo> = new EventEmitter;
+  @Output() todoCheckedBox: EventEmitter<Todo> = new EventEmitter;
   constructor( private router: Router,private matDialog:MatDialog ,private dialog: MatDialog,private todolist: TodoListComponent) { }
   
   ngOnInit(): void {
@@ -62,5 +63,8 @@ export class TaskComponent implements OnInit {
     }
   }
   
+  onClickChecked(todo:Todo){
+    this.todoCheckedBox.emit(todo)
+  }
   
 }

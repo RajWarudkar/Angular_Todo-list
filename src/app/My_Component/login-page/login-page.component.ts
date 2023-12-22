@@ -13,7 +13,7 @@ export class LoginPageComponent implements OnInit {
 
 
   sendMessage() {
-    this.dataService.sendData(this.loginObj.useremail);
+    this.dataService.sendData(this.loginObj.username);
   }
 
 
@@ -55,10 +55,9 @@ export class LoginPageComponent implements OnInit {
   onLogin(){
     this.isLoggedIn = true;
 
-    const isUserExist = this.signupUser.find(m => m.userEmail == this.loginObj.useremail && m.userPass == this.loginObj.userpass);
+    const isUserExist = this.signupUser.find(m => m.userName == this.loginObj.username && m.userPass == this.loginObj.userpass);
     if (isUserExist != undefined) {
       this.router.navigateByUrl('/first-page')
-      alert("User login success")
     } else {
       alert("Wrong ID or Pssword")
     }
@@ -74,6 +73,8 @@ export class LoginPageComponent implements OnInit {
     this.dialog.open(this.secondDialog);
   }
 
+
+    
 
   
 

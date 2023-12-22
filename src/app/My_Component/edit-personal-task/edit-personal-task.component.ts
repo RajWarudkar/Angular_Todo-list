@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { PersonalTodo } from 'src/app/PersonalTodo';
 import { Todo } from 'src/app/Todo';
 
 @Component({
@@ -12,17 +13,21 @@ export class EditPersonalTaskComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  @Output() todoedit: EventEmitter<Todo> = new EventEmitter<Todo>();
+  @Output() todoedit: EventEmitter<PersonalTodo> = new EventEmitter<PersonalTodo>();
 
   name: string = '';
   desc: string = '';
   srno: number = 0;
+  starttime :number=0;
+  endtime :number=0;
 
   onSubmit() {
-    const todo: Todo = {
-      srno: this.srno,
-      name: this.name,
-      desc: this.desc
+    const todo: PersonalTodo = {
+      srno2: this.srno,
+      name2: this.name,
+      desc2: this.desc,
+      starttime2 :this.starttime,
+      endtime2 :this.endtime
     };
     this.todoedit.emit(todo);
   }

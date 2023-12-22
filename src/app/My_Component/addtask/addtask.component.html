@@ -4,7 +4,16 @@
     <ng-template #secondDialog>
 
         <mat-dialog-content>
+            <div class="position-relative mb-5">
+                <div class="position-absolute top-0 end-0">
+                    <button mat-icon-button aria-label="close dialog"
+                        mat-dialog-close>
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+            </div>
             <form action>
+               
                 <div class="container">
                     <div class="mb-3 mt-3">
                         <label for="exampleFormControlInput1"
@@ -15,10 +24,10 @@
                             placeholder="Enter name">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 ">
                         <label for="exampleFormControlTextarea1"
                             class="form-label">Description:</label>
-                        <textarea style="width: 30cap;height: 20cap;"
+                        <textarea style="width: 40cap;height: 10cap;"
                             class="form-control"
                             id="exampleFormControlTextarea1" id="desc"
                             name="desc"
@@ -28,10 +37,31 @@
                     <div class="mb-3 mt-3">
                         <label for="exampleFormControlInput1"
                             class="form-label">Prority:</label>
-                        <input type="email" [(ngModel)]="srno"
+                        <input type="number" [(ngModel)]="srno"
                             class="form-control" name="srno" id="srno"
                             id="exampleFormControlInput1"
                             placeholder="Enter Prority">
+                    </div>
+                    <div class="container1">
+                        <div class="mb-3 mt-3 starttime">
+                            <label for="exampleFormControlInput1"
+                                class="form-label">Start time:</label>
+                            <input type="time" style="color: green;"
+                                [(ngModel)]="starttime"
+                                class="form-control" name="startime"
+                                id="startime"
+                                id="exampleFormControlInput1"
+                                placeholder="Enter Prority">
+                        </div>
+                        <div class="mb-3 mt-3 ms-5 endtime">
+                            <label for="exampleFormControlInput1"
+                                class="form-label">End time:</label>
+                            <input type="time" style="color: red;"
+                                [(ngModel)]="endtime"
+                                class="form-control" name="endtime" id="endtime"
+                                id="exampleFormControlInput1"
+                                placeholder="Enter Prority">
+                        </div>
                     </div>
 
                 </div>

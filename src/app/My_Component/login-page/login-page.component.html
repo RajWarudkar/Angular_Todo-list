@@ -1,41 +1,52 @@
 
 
-<div class="container ">
-	<div class="card main">
+<div class="container">
+	<div class="card main" style="height: 440px;">
 		<div class="card-header">
 			<h1>Login</h1>
 		</div>
 		<div class="card-body">
 			<form action="/submit">
-				<label for="chk" aria-hidden="true" class="fields ">User Email :-</label>
-				<input type="email" name="email" placeholder="Email" required
-					[(ngModel)]="loginObj.useremail" class="form-control mt-2 mb-3">
+				<label for="chk" aria-hidden="true" class="fields ">User Name :-</label>
+				<input type="email" name="name" placeholder="User Name" required
+					[(ngModel)]="loginObj.username" class="form-control mt-2 mb-3">
 				<label for="chk" aria-hidden="true" class="fields ">User Pass :-</label>
 				<input type="password" name="pswd" placeholder="Password" required
 					[(ngModel)]="loginObj.userpass" class="form-control mb-4">
-				<button type="submit" class="btn btn-primary btn-block login" (click)="onLogin(); sendMessage()" >Login</button>
+				<button type="submit" class="btn btn-primary btn-block login"
+					(click)="onLogin(); sendMessage()">Login</button>
 			</form>
-			<div class="justify-content-start position-relative ">
-				<label for class="mt-4"><h2>New User?</h2></label><br>
-				<button type="submit"
-					class="btn btn-success btn-block"
-					(click)="openDialogWithoutRef()">Sign Up</button>
+			<div class="position-relative ">
+				<label for class="mt-5 position-absolute top-0 start-50 translate-middle"><h2>New
+						User?</h2></label><br>
+				<input type="button"
+					class="signupbtn btn btn-success btn-block position-absolute top-0 start-50 translate-middle"
+					(click)="openDialogWithoutRef()" value="Sign Up">
+
 			</div>
 			<ng-template #secondDialog>
 				<mat-dialog-content>
 					<!-- Signup Modal -->
-					<div class="container-fluid signupbox">
-						<label for="chk" aria-hidden="true" class="fields mb-2"><h1>Sign up</h1></label>
+					<div class=" signupbox ">
+
+						<div class="position-relatives">
+							<h1 class>Sign up</h1>
+							<button mat-icon-button aria-label="close dialog" mat-dialog-close
+								class>
+								<mat-icon>close</mat-icon>
+							</button>
+						</div>
 						<input type="text" name="txt" placeholder="User name" class="fields1"
 							required
-							[(ngModel)]="signUpObj.userName" class="form-control">
+							[(ngModel)]="signUpObj.userName" class="form-control mb-3">
 						<input type="email" name="email" placeholder="Email" class="fields2"
 							required
-							[(ngModel)]="signUpObj.userEmail" class="form-control">
+							[(ngModel)]="signUpObj.userEmail" class="form-control mb-3">
 						<input type="password" name="pswd" placeholder="Password" class="fields3"
 							required
-							[(ngModel)]="signUpObj.userPass" class="form-control">
+							[(ngModel)]="signUpObj.userPass" class="form-control mb-4">
 						<button (click)="onSignUp()" class="btn btn-outline-success">Sign up</button>
+
 					</div>
 				</mat-dialog-content>
 			</ng-template>

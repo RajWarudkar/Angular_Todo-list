@@ -7,6 +7,8 @@
           <th>Prority</th>
           <th>Name</th>
           <th>Description</th>
+          <th style="color: rgb(79, 214, 79); ">Start time</th>
+          <th style="color: red;">End time</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -16,6 +18,8 @@
           <td style="width: 10cap;">{{todooffice.srno1}}</td>
           <td style="width: 10cap;">{{todooffice.name1}}</td>
           <td style="width: 30cap; height: 10cap;">{{todooffice.desc1}}</td>
+          <td style="color: rgb(79, 214, 79); width: 10%;" class="starttime">{{todooffice.starttime1}}</td>
+          <td style="color: red; width: 10%;">{{todooffice.endtime1}}</td>
           <td style="width: 10cap;"> <button type="button"
               class="btn btn-outline-success"
               (click)="openDialogWithoutRef1()">Edit</button></td>

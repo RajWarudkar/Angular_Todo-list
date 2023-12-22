@@ -50,3 +50,6 @@ p {
   text-decoration: none;
   font-size: 30px;
 }
+.strike{
+  text-decoration: line-through;
+}

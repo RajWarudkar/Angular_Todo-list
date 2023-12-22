@@ -15,8 +15,10 @@ export class AddOfficeTaskComponent implements OnInit {
   name1: string = '';
   desc1: string = '';
   srno1: number = 0;
+  starttime1: number = 0;
+  endtime1: number = 0
 
-  constructor(private router: Router,private dialog: MatDialog) { }
+  constructor(private router: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +27,9 @@ export class AddOfficeTaskComponent implements OnInit {
     const todooffice: OfficeTodo = {
       srno1: this.srno1,
       name1: this.name1,
-      desc1: this.desc1
+      desc1: this.desc1,
+      starttime1: this.starttime1,
+      endtime1: this.endtime1
     };
     this.todoaddoffice.emit(todooffice);
   }

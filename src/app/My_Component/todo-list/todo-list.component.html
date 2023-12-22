@@ -101,7 +101,8 @@
         <div>
             <ul *ngFor="let todo of todos">
                 <app-task [todo]="todo"
-                    (tododelete)="deleteTodo($event)"  (todoedit)="edittodo($event)"  
+                    (tododelete)="deleteTodo($event)"  (todoedit)="edittodo($event)" 
+                     (todoCheckedBox)="toggaltodo($event)" 
                     ></app-task>
 
             </ul>

@@ -16,6 +16,10 @@ export class AddtaskComponent implements OnInit {
   name: string = '';
   desc: string = '';
   srno: number = 0;
+  starttime :number =0;
+  endtime :number =0;
+  active :boolean=false;
+
 
   constructor(private router: Router,private dialog: MatDialog) { }
 
@@ -26,7 +30,10 @@ export class AddtaskComponent implements OnInit {
     const todo: Todo = {
       srno: this.srno,
       name: this.name,
-      desc: this.desc
+      desc: this.desc,
+      starttime:this.starttime,
+      endtime :this.endtime,
+      active :this.active
     };
     this.todoadd.emit(todo);
   }

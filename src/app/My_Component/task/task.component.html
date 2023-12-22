@@ -16,16 +16,29 @@
             <tr>
               <th>Prority</th>
               <th>Name</th>
-              <th>Description</th>
+              <th >Description</th>
+              <th style="color: rgb(79, 214, 79); ">Start time</th>
+              <th style="color: red;">End time</th>
+              <th>Action</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{{todo.srno}}</td>
-              <td>{{todo.name}}</td>
-              <td>{{todo.desc}}</td>
+              <td style="width: 10%;" class="srno">{{todo.srno}}</td>
+              <td style="width: 10%;" class="name" [ngClass]="{'strike':!todo.active}">{{todo.name}}</td>
+              <td style="width: 30%;" class="desc">{{todo.desc}}</td>
+              <td style="color: rgb(79, 214, 79); width: 20%;" class="starttime">{{todo.starttime}}</td>
+              <td style="color: red; width: 10%;">{{todo.endtime}}</td>
+              <td style="width: 15%;">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="onClickChecked(todo)">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Mark as done
+                  </label>
+                </div>
+              </td>
               <td> <button type="button"
                   class="btn btn-outline-success" (click)="openDialogWithoutRef1()">Edit</button></td>
                   <ng-template #secondDialog1>
