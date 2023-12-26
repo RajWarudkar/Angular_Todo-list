@@ -14,6 +14,7 @@ export class PersonalTaskComponent implements OnInit {
   todoPersonal = new PersonalTodo();
   @Output() tododeletepersonal: EventEmitter<PersonalTodo> = new EventEmitter;
   @Output() todoeditpersonal: EventEmitter<PersonalTodo> = new EventEmitter;
+  @Output() todoCheckedBox: EventEmitter<PersonalTodo> = new EventEmitter;
   constructor( private router: Router,private matDialog:MatDialog ,private dialog: MatDialog) { }
   
   ngOnInit(): void {
@@ -47,6 +48,9 @@ export class PersonalTaskComponent implements OnInit {
   }
   openDialogWithoutRef1() {
     this.dialog.open(this.secondDialog1);
+  }
+  onClickChecked(todoPersonal:PersonalTodo){
+    this.todoCheckedBox.emit(todoPersonal)
   }
 
 }

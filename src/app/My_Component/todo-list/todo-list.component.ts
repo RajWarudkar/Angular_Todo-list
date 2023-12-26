@@ -12,16 +12,16 @@ export class TodoListComponent implements OnInit {
   localItem: string | null;
   todos!: Todo[];
   editingTodo: Todo | null = null;
-drawer: any;
- 
+  drawer: any;
 
-  
+
+
   constructor(private router: Router, private sidebarService: SidebarService) {
     this.localItem = localStorage.getItem("todos")
     if (this.localItem == null) {
       this.todos = [];
-    }else{
-      this.todos=JSON.parse(this.localItem)
+    } else {
+      this.todos = JSON.parse(this.localItem)
     }
   }
 
@@ -54,15 +54,15 @@ drawer: any;
   toggaltodo(todo: Todo) {
     console.log(todo)
     const index = this.todos.indexOf(todo);
-    this.todos[index].active=!this.todos[index].active;
+    this.todos[index].active = !this.todos[index].active;
     localStorage.setItem("todos", JSON.stringify(this.todos));
-  } 
-
-  
+  }
 
 
 
-  
- 
+
+
+
+
 
 }

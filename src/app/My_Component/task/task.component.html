@@ -26,9 +26,9 @@
           </thead>
           <tbody>
             <tr>
-              <td style="width: 10%;" class="srno">{{todo.srno}}</td>
+              <td style="width: 10%;" class="srno"  [ngClass]="{'strike':!todo.active}">{{todo.srno}}</td>
               <td style="width: 10%;" class="name" [ngClass]="{'strike':!todo.active}">{{todo.name}}</td>
-              <td style="width: 30%;" class="desc">{{todo.desc}}</td>
+              <td style="width: 30%;" class="desc"  [ngClass]="{'strike':!todo.active}">{{todo.desc}}</td>
               <td style="color: rgb(79, 214, 79); width: 20%;" class="starttime">{{todo.starttime}}</td>
               <td style="color: red; width: 10%;">{{todo.endtime}}</td>
               <td style="width: 15%;">

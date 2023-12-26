@@ -98,7 +98,7 @@
                 <!-- for showing table in task -->
                 <div>
                     <ul *ngFor="let todooffice of todosoffice">
-                        <app-office-task [todooffice]="todooffice"
+                        <app-office-task [todooffice]="todooffice" 
                             (tododeleteoffice)="deleteTodo($event)"></app-office-task>
                     </ul>
                 </div>

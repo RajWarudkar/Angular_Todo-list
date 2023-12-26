@@ -9,10 +9,11 @@ import { PersonalTodoListComponent } from './My_Component/personal-todo-list/per
 import { AboutSectionComponent } from './My_Component/about-section/about-section.component';
 import { FirstPageComponent } from './My_Component/first-page/first-page.component';
 import { LoginPageComponent } from './My_Component/login-page/login-page.component';
+import { FrontPageComponent } from './My_Component/front-page/front-page.component';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: '/login-page', pathMatch: 'full' },
+  { path: '', redirectTo: '/front-page', pathMatch: 'full' },
   { path: 'addtask', component: AddtaskComponent },
   { path: 'todo-list', component: TodoListComponent },
   { path: 'task', component: TaskComponent },
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: 'about-section', component: AboutSectionComponent },
   { path: 'first-page', component: FirstPageComponent },
   { path: 'login-page', component: LoginPageComponent },
-
+  { path: 'front-page', component: FrontPageComponent },
 
 ];
 

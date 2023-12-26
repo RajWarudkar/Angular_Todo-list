@@ -34,8 +34,8 @@ import { AddPersonalTaskComponent } from './My_Component/add-personal-task/add-p
 import { AboutSectionComponent } from './My_Component/about-section/about-section.component';
 import { EditTaskComponent } from './My_Component/edit-task/edit-task.component';
 import { EditPersonalTaskComponent } from './My_Component/edit-personal-task/edit-personal-task.component';
-import { EditOfficeTaskComponent } from './My_Component/edit-office-task/edit-office-task.component'; 
-
+import { EditOfficeTaskComponent } from './My_Component/edit-office-task/edit-office-task.component';
+import { FrontPageComponent } from './My_Component/front-page/front-page.component';
 
 
 @NgModule({
@@ -56,6 +56,7 @@ import { EditOfficeTaskComponent } from './My_Component/edit-office-task/edit-of
     EditTaskComponent,
     EditPersonalTaskComponent,
     EditOfficeTaskComponent,
+    FrontPageComponent,
     
 
     // Add the 'app-addtask' component here
