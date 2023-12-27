@@ -71,3 +71,81 @@ button:hover{
 	background-color: #6f34db;
 	background-image: url('/assets/image/pawel-czerwinski-vI5XwPbGvmY-unsplash.jpg');
 }
+
+
+@media only screen and (max-width: 600px) {
+
+	
+html , body{
+	background-color: #b56666;
+}
+.login{
+	margin-left: 38% ;
+}
+
+button:hover{
+	background: #ffffff;
+	color: #000000;
+	border: 1px solid black;
+}
+
+
+.container {
+	max-width: 400px;
+	margin-top: 100px;
+}
+
+.card {
+	border: none;
+	border: 4px solid rgb(255, 255, 255);
+	border-radius: 15px;
+	box-shadow: 0 0 50px rgba(122, 98, 98, 0.1);
+}
+
+.card-header {
+	background-color: #6f34db;
+	color: #fff;
+	text-align: center;
+	padding: 1.5rem;
+	border-radius: 10px 10px 0 0;
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+.form-control {
+	border-radius: 5px;
+}
+
+.btn-primary {
+	background-color: #6f34db;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+.signupbox {
+	width: 280px;
+}
+.fields2{
+	margin-top: 10px;
+}
+.fields1{
+	margin-top: 10px;
+}
+.signupbtn{
+	margin-top: 80px;
+}
+.position-relatives{
+	display: flex;
+	justify-content: space-between;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+.root{
+	background-color: #6f34db;
+	background-image: url('/assets/image/pawel-czerwinski-vI5XwPbGvmY-unsplash.jpg');
+}
+}
