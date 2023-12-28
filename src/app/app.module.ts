@@ -37,7 +37,6 @@ import { EditPersonalTaskComponent } from './My_Component/edit-personal-task/edi
 import { EditOfficeTaskComponent } from './My_Component/edit-office-task/edit-office-task.component';
 import { FrontPageComponent } from './My_Component/front-page/front-page.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
