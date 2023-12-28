@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PersonalTodo } from 'src/app/PersonalTodo';
 import { SidebarService } from 'src/app/sidebar.service';
-import { Todo } from 'src/app/Todo';
 
 @Component({
   selector: 'app-personal-todo-list',
@@ -37,6 +36,14 @@ export class PersonalTodoListComponent implements OnInit {
     this.todosPersonal.push(todopersonal);
     localStorage.setItem("todospersonal", JSON.stringify(this.todosPersonal));
   }
+
+  toggaltodoPersonal(todospersonal: PersonalTodo) {
+    console.log(todospersonal)
+    const index2 = this.todosPersonal.indexOf(todospersonal);
+    this.todosPersonal[index2].active2 = !this.todosPersonal[index2].active2;
+    localStorage.setItem("todospersonal", JSON.stringify(this.todosPersonal));
+  }
+  
 
 
   

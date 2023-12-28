@@ -99,7 +99,7 @@
                 <div>
                     <ul *ngFor="let todooffice of todosoffice">
                         <app-office-task [todooffice]="todooffice" 
-                            (tododeleteoffice)="deleteTodo($event)"></app-office-task>
+                            (tododeleteoffice)="deleteTodo($event)" (todoCheckedBoxOffice)="toggaltodoOffice($event)" ></app-office-task>
                     </ul>
                 </div>
             </ng-template>

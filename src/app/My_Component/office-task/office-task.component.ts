@@ -20,31 +20,11 @@ export class OfficeTaskComponent implements OnInit {
 
   @Output() tododeleteoffice: EventEmitter<OfficeTodo> = new EventEmitter;
   @Output() todoeditoffice: EventEmitter<OfficeTodo> = new EventEmitter;
-  @Output() todoCheckedBox: EventEmitter<OfficeTodo> = new EventEmitter;
+  @Output() todoCheckedBoxOffice: EventEmitter<OfficeTodo> = new EventEmitter;
 
   constructor( private router: Router,private matDialog:MatDialog ,private dialog: MatDialog) { }
   
 
-  @Output() todoadd: EventEmitter<Todo> = new EventEmitter<Todo>();
-
-  name: string = '';
-  desc: string = '';
-  srno: number = 0;
-  starttime :number =0;
-  endtime :number =0;
-  active :boolean=false;
-
-  onSubmit() {
-    const todo: Todo = {
-      srno: this.srno,
-      name: this.name,
-      desc: this.desc,
-      starttime:this.starttime,
-      endtime :this.endtime,
-      active :this.active
-    };
-    this.todoadd.emit(todo);
-  }
  
 
   onClickDeleteoffice(todooffice:OfficeTodo){
@@ -75,7 +55,9 @@ export class OfficeTaskComponent implements OnInit {
   openDialogWithoutRef1() {
     this.dialog.open(this.secondDialog1);
   }
-  onClickChecked(todooffice:OfficeTodo){
-    this.todoCheckedBox.emit(todooffice)
+
+
+  onClickCheckedOffice(todooffice:OfficeTodo){
+    this.todoCheckedBoxOffice.emit(todooffice)
   }
 }

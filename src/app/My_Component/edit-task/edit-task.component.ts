@@ -19,7 +19,7 @@ export class EditTaskComponent implements OnInit {
   srno: number = 0;
   starttime :number =0;
   endtime:number =0;
-  active:boolean=false
+  active:boolean
   onSubmit() {
     const todo: Todo = {
       srno: this.srno,

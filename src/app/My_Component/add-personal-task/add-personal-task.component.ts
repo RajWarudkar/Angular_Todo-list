@@ -16,7 +16,7 @@ export class AddPersonalTaskComponent implements OnInit {
   srno2: number = 0;
   starttime2:number=0;
   endtime2 :number=0;
-
+  active2:boolean
   constructor(private router: Router,private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -27,8 +27,9 @@ export class AddPersonalTaskComponent implements OnInit {
       srno2: this.srno2,
       name2: this.name2,
       desc2: this.desc2,
-      starttime2:this.starttime2,
-      endtime2:this.endtime2
+      starttime2: this.starttime2,
+      endtime2: this.endtime2,
+      active2: this.active2
     };
     this.todoaddpersonal.emit(todopersonal);
   }

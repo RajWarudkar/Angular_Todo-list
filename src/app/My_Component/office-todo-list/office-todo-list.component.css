@@ -27,3 +27,6 @@ a {
     justify-content: start;
     margin-left: 240px;
   }
+  .strike{
+    text-decoration: line-through;
+  }

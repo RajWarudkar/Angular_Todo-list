@@ -40,5 +40,12 @@ export class OfficeTodoListComponent implements OnInit {
     this.todosoffice.push(todoOffice);
     localStorage.setItem("todosoffice", JSON.stringify(this.todosoffice));
   }
+
+  toggaltodoOffice(todosOffice: OfficeTodo) {
+    console.log(todosOffice)
+    const index1 = this.todosoffice.indexOf(todosOffice);
+    this.todosoffice[index1].active1 = !this.todosoffice[index1].active1;
+    localStorage.setItem("todosoffice", JSON.stringify(this.todosoffice));
+  }
   
 }

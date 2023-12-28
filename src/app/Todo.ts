@@ -4,7 +4,7 @@ export class Todo {
     desc: string = '';
     starttime: number = 0;
     endtime: number = 0;
-    active!: boolean; 
+    active!: boolean ;
 
 
     

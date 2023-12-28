@@ -51,6 +51,7 @@ export class TodoListComponent implements OnInit {
       this.todos[index] = editedtodo;
     }
   }
+  
   toggaltodo(todo: Todo) {
     console.log(todo)
     const index = this.todos.indexOf(todo);

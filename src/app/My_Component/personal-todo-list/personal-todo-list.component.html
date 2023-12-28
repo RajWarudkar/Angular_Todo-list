@@ -99,7 +99,7 @@
                 <div>
                     <ul *ngFor="let todopersonal of todosPersonal">
                         <app-personal-task [todoPersonal]="todopersonal"
-                            (tododeletepersonal)="deleteTodoPersonal($event)"></app-personal-task>
+                            (tododeletepersonal)="deleteTodoPersonal($event)" (todoCheckedBoxPersonal)="toggaltodoPersonal($event)" ></app-personal-task>
                     </ul>
                 </div>
             </ng-template>

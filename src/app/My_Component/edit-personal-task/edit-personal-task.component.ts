@@ -15,21 +15,23 @@ export class EditPersonalTaskComponent implements OnInit {
   }
   @Output() todoedit: EventEmitter<PersonalTodo> = new EventEmitter<PersonalTodo>();
 
-  name: string = '';
-  desc: string = '';
-  srno: number = 0;
-  starttime :number=0;
-  endtime :number=0;
+  name2: string = '';
+  desc2: string = '';
+  srno2: number = 0;
+  starttime2 :number=0;
+  endtime2 :number=0;
+  active2 :boolean
 
   onSubmit() {
-    const todo: PersonalTodo = {
-      srno2: this.srno,
-      name2: this.name,
-      desc2: this.desc,
-      starttime2 :this.starttime,
-      endtime2 :this.endtime
+    const todopersonal: PersonalTodo = {
+      srno2: this.srno2,
+      name2: this.name2,
+      desc2: this.desc2,
+      starttime2 :this.starttime2,
+      endtime2 :this.endtime2,
+      active2: this.active2
     };
-    this.todoedit.emit(todo);
+    this.todoedit.emit(todopersonal);
   }
 
 }

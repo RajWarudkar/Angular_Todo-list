@@ -29,7 +29,8 @@ export class AddOfficeTaskComponent implements OnInit {
       name1: this.name1,
       desc1: this.desc1,
       starttime1: this.starttime1,
-      endtime1: this.endtime1
+      endtime1: this.endtime1,
+      active1: true
     };
     this.todoaddoffice.emit(todooffice);
   }
