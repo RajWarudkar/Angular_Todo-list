@@ -30,3 +30,39 @@
 .card{
     width: 35rem;
 }
+
+@media only screen and (max-width:600px) {
+    .content{
+        padding: 5px 5px 0px;
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+    }
+    .content h1{
+        padding: 100px 0px 0px;
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+    }
+    .content h2{
+        padding: 100px 0px 0px;
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+    }
+    .content1{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .cards{
+        display: grid;
+        justify-content: center;
+        gap: 50px;
+        padding: 10px 15px;
+    }
+    .card{
+        width: 15rem;
+    }
+    
+}
